@@ -6,7 +6,7 @@
         </h2>
       </div>
     </div>
-    <div class="client_container ">
+    <div class="client_container " *ngFor="let customer of customerList">
       <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -17,18 +17,17 @@
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </p>
                   <p>
-                    This book was pretty helpful in giving me ideas to write in the SAT.
-However, the length of the examples are not consistent. Some are detailed while others are rather short
-One person found this helpful
+                    {{customer.custReview}}
                   </p>
                 </div>
                 <div class="client-id">
-                  <div class="img-box">
-                    <img src="./../assets/images/client.jpg" alt="">
+                  <div class="img-box img-customer">
+                    <img src="{{customer.custImg}}" alt="">
+                    <!-- <img src="./../assets/images/client.jpg" alt=""> -->
                   </div>
                   <div class="name">
                     <h5>
-                      Anup Mangalkar
+                      {{customer.custName}}
                     </h5>
                     <h6>
                       Madhuri Stationaries, Morshi.
