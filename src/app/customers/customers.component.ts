@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-customerList:any =[];
+  customerList: any = [];
   constructor() { }
 
   ngOnInit(): void {
-
     const customerObj1: any = {
       "custReview": "This book was pretty helpful in giving me ideas to write in the SAT.However, the length of the examples are not consistent.Some are detailed while others are rather short",
       "custName": "Anup Mangalkar",
@@ -28,9 +27,9 @@ customerList:any =[];
       "custImg": "./../assets/images/Photo.jpeg",
     };
 
-this.customerList.push(customerObj1);
-this.customerList.push(customerObj2);
-this.customerList.push(customerObj3);
+    this.customerList.push(customerObj1);
+    this.customerList.push(customerObj2);
+    this.customerList.push(customerObj3);
 
   }
 
