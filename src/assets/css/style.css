@@ -351,6 +351,10 @@ a:focus {
   color: #f3c93e;
 }
 
+.img-customer {
+  width: 90px;
+}
+
 .slider_section .img-box img {
   width: 100%;
 }
