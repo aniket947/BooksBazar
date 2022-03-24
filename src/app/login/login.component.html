@@ -1,15 +1,35 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div formGroupName="userDetails">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <input type="text" placeholder="Enter username" formControlName="userName">
+<button (click)="isLoginOpen = true" style="width:auto;">Login</button>
+<div *ngIf="isLoginOpen" class="modal">
+    <form class="modal-content animate" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userDetails">
+            <div class="imgcontainer">
+                <span (click)="isLoginOpen = false" class="close" title="Close Modal">&times;</span>
+                <img src="./../../assets/images/Photo.jpeg" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" formControlName="userName">
+                <div class="text-danger"
+                    *ngIf="!loginForm.get('userDetails.userName').valid && loginForm.get('userDetails.userName').touched">
+                    Please Enter Username
                 </div>
-                <div class="col-md-6">
-                    <input type="text" placeholder="Enter Password" formControlName="password">
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" formControlName="password">
+                <div class="text-danger"
+                    *ngIf="!loginForm.get('userDetails.password').valid && loginForm.get('userDetails.password').touched">
+                    Please Enter Password
                 </div>
-            </div><br>
-            <button class="btn btn-primary" (click)="userNameHeader()">Login</button>
+                <button type="submit" (click)="login()">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" (click)="isLoginOpen = false" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
         </div>
-    </div>
-</form>

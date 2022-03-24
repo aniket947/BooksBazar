@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../Services/login.service';
 
 @Component({
@@ -10,14 +10,15 @@ import { LoginService } from '../Services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: any = FormGroup
   loginName: any
+  isLoginOpen: boolean = false
 
   constructor(private _loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       'userDetails': new FormGroup({
-        'userName': new FormControl(null),
-        'password': new FormControl(null),
+        'userName': new FormControl(null, Validators.required),
+        'password': new FormControl(null, Validators.required),
       }),
     })
   }
@@ -26,8 +27,9 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm)
   }
 
-  userNameHeader() {
+  login() {
     this._loginService.userLoginName.next(this.loginForm.value.userDetails.userName);
+    this.isLoginOpen = false;
   }
 
 }

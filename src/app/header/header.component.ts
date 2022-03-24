@@ -8,6 +8,7 @@ import { LoginService } from '../Services/login.service';
 })
 export class HeaderComponent implements OnInit {
   loginName: any;
+  isAdminLogin: boolean = true;
 
   constructor(private _loginService: LoginService) {
   }
@@ -18,6 +19,6 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  isAdminLogin: boolean = true;
+  
 
 }
