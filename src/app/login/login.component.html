@@ -1,4 +1,4 @@
-<button (click)="isLoginOpen = true" style="width:auto;">Login</button>
+<button (click)="isLoginOpen = true" *ngIf="!isLoginSuccessful" style="width:auto;">Login</button>
 <div *ngIf="isLoginOpen" class="modal">
     <form class="modal-content animate" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div formGroupName="userDetails">
@@ -33,3 +33,5 @@
             </div>
 
         </div>
+    </form>
+</div>

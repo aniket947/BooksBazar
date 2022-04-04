@@ -8,9 +8,10 @@ import { LoginService } from '../Services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: any = FormGroup
-  loginName: any
-  isLoginOpen: boolean = false
+  loginForm: any = FormGroup;
+  loginName: any;
+  isLoginOpen: boolean = false;
+  isLoginSuccessful: boolean = false;
 
   constructor(private _loginService: LoginService) { }
 
@@ -24,11 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm)
+    console.log(this.loginForm);
   }
 
   login() {
     this._loginService.userLoginName.next(this.loginForm.value.userDetails.userName);
+    this.isLoginSuccessful = true;
     this.isLoginOpen = false;
   }
 

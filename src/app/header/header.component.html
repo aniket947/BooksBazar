@@ -24,12 +24,17 @@
         </form>
 
         <div class="user_option_box">
-          <a href="" class="account-link">
+          <app-login></app-login>
+          <a *ngIf="loginName" href="" class="account-link">
             <i class="fa fa-user" aria-hidden="true"></i>
             <span>
-              My Account{{loginName}}
+              {{loginName}}
             </span>
           </a>
+
+          <div>
+            
+          </div>
           <a href="" class="cart-link">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             <span>
