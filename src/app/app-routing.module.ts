@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { LandingComponent } from './landing/landing.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: '', component: LandingComponent },
+  { path: 'checkout', component: CheckoutComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes,{
+    preloadingStrategy:PreloadAllModules                // PreLoading in angular
+  })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

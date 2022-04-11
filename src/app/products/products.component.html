@@ -10,11 +10,11 @@
           <div class="box">
             <div class="img-box">
               <img src="{{product.productImg}}" alt="">
-              <a href="" class="add_cart_btn">
+              <button class="add_cart_btn" (click)="productAddedtoCart(product)">
                 <span>
                   Add To Cart
                 </span>
-              </a>
+              </button>
             </div>
             <div class="detail-box">
               <h5>

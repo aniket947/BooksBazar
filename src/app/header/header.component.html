@@ -1,78 +1,89 @@
 <header class="header_section">
-    <div *ngIf="isAdminLogin" class="header_top">
-      <div class="container-fluid">
-        <div class="top_nav_container">
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +91 9145127189
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                Email : nitin.mandle@gmail.com
-              </span>
-            </a>
-          </div>
-          <form class="search_form">
-            <input type="text" class="form-control" placeholder="Search here...">
-            <button class="" type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </form>
-          <div class="user_option_box">
-            <a href="" class="account-link">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                My Account
-              </span>
-            </a>
-            <a href="" class="cart-link">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              <span>
-                Cart
-              </span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="header_bottom">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+  <div *ngIf="isAdminLogin" class="header_top">
+    <div class="container-fluid">
+      <div class="top_nav_container">
+        <div class="contact_nav">
+          <a href="">
+            <i class="fa fa-phone" aria-hidden="true"></i>
             <span>
-              Saraswati Notebook Bazaar
+              Call : +91 9145127189
+            </span>
+          </a>
+          <a href="">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span>
+              Email : nitin.mandle@gmail.com
+            </span>
+          </a>
+        </div>
+        <form class="search_form">
+          <input type="text" class="form-control" placeholder="Search here...">
+          <button class="" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <div class="user_option_box">
+          <app-login></app-login>
+          <a *ngIf="loginName" href="" class="account-link">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span>
+              {{loginName}}
             </span>
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
+          <div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="product.html">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="why.html">Why Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
-              </li>
-            </ul>
           </div>
-        </nav>
+          <a [routerLink]="'/checkout'" class="cart-link">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span>
+              Cart {{this.productCart.length}}
+            </span>
+          </a>
+        </div>
       </div>
+
     </div>
-  </header>
+  </div>
+  <div class="header_bottom">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <div class="logo">
+          <!-- <img src="./../assets/images/logo.jpg" alt=""> -->
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <span>
+
+            Saraswati Notebook Bazaar
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="why.html">Why Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
