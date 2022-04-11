@@ -8,7 +8,9 @@ import { LoginService } from '../Services/login.service';
 })
 export class HeaderComponent implements OnInit {
   loginName: any;
+  cartProducts:any;
   isAdminLogin: boolean = true;
+  productCart: any = [];
 
   constructor(private _loginService: LoginService) {
   }
@@ -17,8 +19,14 @@ export class HeaderComponent implements OnInit {
     this._loginService.userLoginName.subscribe((loginUserName: any) => {
       this.loginName = loginUserName;
     })
-  }
+    this._loginService.passProductToCart.subscribe((passproduct: any) => {
+      this.productCart.push(passproduct);
+    })
 
+
+
+    
+  }
   
 
 }

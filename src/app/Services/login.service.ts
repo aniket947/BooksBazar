@@ -9,4 +9,5 @@ export class LoginService {
   constructor() { }
 
   userLoginName = new Subject();
+  passProductToCart = new Subject();
 }

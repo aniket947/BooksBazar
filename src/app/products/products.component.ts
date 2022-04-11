@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../Services/login.service';
 
 @Component({
   selector: 'app-products',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   productList: any = [];
-  constructor() { }
+  constructor(private _loginService: LoginService) { }
 
   ngOnInit(): void {
     const productObj1: any = {
@@ -48,4 +49,11 @@ export class ProductsComponent implements OnInit {
     this.productList.push(productObj6);
   }
 
+  productAddedtoCart(passproduct: any){
+    this._loginService.passProductToCart.next(passproduct);
+    // console.log(passproduct);
+  }
+
 }
+
+
